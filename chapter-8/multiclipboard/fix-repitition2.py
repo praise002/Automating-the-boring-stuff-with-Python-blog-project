@@ -66,7 +66,7 @@ def run():
             elif sys.argv[1].lower() == 'clear':
                 clear_keywords(mcb_shelf)
                 print('Keywords cleared')
-                print(list_keywords(mcb_shelf))
+                print(keywords)
                 
         else:
             print(f'''Usage: python your_script.py save <keyword>
