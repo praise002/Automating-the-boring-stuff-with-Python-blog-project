@@ -16,7 +16,7 @@ def save_keyword_with_content(keyword, content, mcb_shelf):
 
 def list_keywords(mcb_shelf):
     return str(list(mcb_shelf.keys()))  # returned as bytes obj not strs that is why we have to convert it
-
+    
 def load_content(keyword, mcb_shelf):
     return mcb_shelf[keyword]
     

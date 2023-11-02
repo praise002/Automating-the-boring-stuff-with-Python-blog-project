@@ -46,14 +46,14 @@ def run():
             keyword = sys.argv[2]
             while True:
                 user_input = input(f'Are you sure you want to delete {keyword}: ').lower()
-                # if user_input == 'yes' or 'y':  # fix this issue not working
-                if user_input == 'yes' or user_input == 'y':
+                if user_input == 'yes' or 'y':  # fix this issue not working
+                # if user_input == 'yes' or user_input == 'y':
                     delete_keyword(keyword)
                     print(f'{keyword} deleted with contents.')
                     print(list_keywords())
                     sys.exit()
-                # elif user_input == 'no' or 'n':  #fix:not working
-                elif user_input == 'no' or user_input == 'n':
+                elif user_input == 'no' or 'n':  #fix:not working
+                # elif user_input == 'no' or user_input == 'n':
                     print('Deletion abolished')
                     sys.exit()
         
