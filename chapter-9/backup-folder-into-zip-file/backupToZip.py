@@ -6,11 +6,11 @@
 
 import zipfile, os, sys
 
-def backup_to_zip(abs_path):
-    # get the absolute path of the abs_path
-    abs_path = os.path.abspath(abs_path)
+def backup_to_zip(folder):
+    # get the absolute path of the folder
+    folder = os.path.abspath(folder)
     # get the basename
-    base_filename = os.path.basename(abs_path)
+    base_filename = os.path.basename(folder)
     print(base_filename)  # output: python-book
     
     # Initialize number
@@ -19,7 +19,7 @@ def backup_to_zip(abs_path):
     # Check if the current base_filename and number exists
     while True:
         zip_filename = f'{base_filename}_{number}.zip'  # python-book_1.zip
-        full_zip_path = os.path.join(abs_path, zip_filename)
+        full_zip_path = os.path.join(folder, zip_filename)
         print(f'Initial: {number}')
         number += 1
         print(f'Final: {number}') 
@@ -35,7 +35,7 @@ def backup_to_zip(abs_path):
     with zipfile.ZipFile(full_zip_path, 'w', zipfile.ZIP_DEFLATED) as backup_zip_file:
         # Walk the entire folder tree and compress the files in each folder
         # for folder_name, subfolders, filenames in os.walk(folder):
-        for folder_name, _, filenames in os.walk(abs_path):
+        for folder_name, _, filenames in os.walk(folder):
             print(f'Adding files in {folder_name}')
             # Add the current folder to the ZIP file
             backup_zip_file.write(folder_name)
